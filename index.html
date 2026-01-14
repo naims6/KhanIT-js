@@ -39,10 +39,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <header
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 backdrop-blur"
-    >
+    <!-- bg  -->
+    <div class="hidden absolute w-full top-0 left-0 right-0 bottom-0 lg:flex">
+      <div>
+        <img
+          class="w-full h-full object-cover"
+          src="assets/images/bg-left.png"
+          alt="Background Image LEFT"
+        />
+      </div>
+      <div>
+        <img
+          class="w-full h-full object-cover"
+          src="assets/images/bg-right.png"
+          alt="Background Image RIGHT"
+        />
+      </div>
+    </div>
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 backdrop-blur">
       <div class="center flex items-center justify-between py-5">
         <!-- Logo -->
         <div class="w-[140px] lg:w-[200px]">
@@ -498,25 +513,6 @@
         </nav>
       </div>
     </header>
-
-    <!-- bg  -->
-    <div class="hidden absolute w-full top-0 left-0 right-0 bottom-0 lg:flex">
-      <div>
-        <img
-          class="w-full h-full object-cover"
-          src="assets/images/bg-left.png"
-          alt="Background Image LEFT"
-        />
-      </div>
-      <div>
-        <img
-          class="w-full h-full object-cover"
-          src="assets/images/bg-right.png"
-          alt="Background Image RIGHT"
-        />
-      </div>
-    </div>
-
     <main class="min-h-screen relative">
       <!-- Hero section -->
       <section id="home" class="py-20 lg:mt-36">
@@ -684,6 +680,53 @@
                 Average Increase in Online Inquiries
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- cta -->
+      <section class="py-20 bg-[#F8FAFC] border-t border-gray-200">
+        <div class="center max-w-3xl text-center">
+          <h2 class="text-3xl font-semibold mb-4">Thank You for Reviewing</h2>
+
+          <p class="text-gray-600 mb-8 max-w-[600px] mx-auto">
+            This project demonstrates a clean, responsive implementation of the
+            provided Figma design using semantic HTML, Tailwind CSS via CDN, and
+            vanilla JavaScript for basic UI interactions.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://naims-dev.vercel.app/"
+              target="_blank"
+              class="px-5 py-3 rounded-lg bg-[#0271E8] text-white hover:bg-[#025dc0] transition"
+            >
+              Portfolio
+            </a>
+
+            <a
+              href="https://github.com/naims6"
+              target="_blank"
+              class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://linkedin.com/in/naims6"
+              target="_blank"
+              class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/1EGxi6iC1su5iH-L3CnQweru5nM_86tZZ/view?usp=sharing"
+              target="_blank"
+              class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </section>
