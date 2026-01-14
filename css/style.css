@@ -8,7 +8,7 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #0271E8;
+  --primary-color: #0271e8;
   --text-color: #060606;
   --border-radius: 8px;
 }
@@ -21,7 +21,7 @@ body {
 .center {
   width: 100%;
   max-width: 1420px;
-  margin-inline :  auto;
+  margin-inline: auto;
   padding-inline: 20px;
 }
 
@@ -40,4 +40,27 @@ body {
   border-radius: var(--border-radius);
   opacity: 90;
   font-size: 16px;
+}
+
+/* section header */
+.badge {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  background: #f0f7ff;
+  border-radius: 32px;
+}
+.title {
+  color: #060606;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 54px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.sub-title {
+  color: #65758B;
+  font-weight: 400;
+  line-height: 150%;
 }
