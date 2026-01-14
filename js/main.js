@@ -59,98 +59,115 @@ const servicesData = [
 const whyChooseData = [
   {
     title: "Expert-Led by a Proven SEO Specialist",
-    description: "Khan IT is founded and led by Md Faruk Khan, a certified SEO expert with over 10 years of experience and more than 8,000 trained professionals.",
-    icon: "user-tie",           // good Font Awesome suggestion
+    description:
+      "Khan IT is founded and led by Md Faruk Khan, a certified SEO expert with over 10 years of experience and more than 8,000 trained professionals.",
+    image: "chose1",
     iconBg: "bg-blue-800",
-    number: "1"
+    number: "1",
+    active: true,
   },
   {
     title: "Specialized in What Works",
-    description: "We specialize in digital marketing and web design. This focus enables faster delivery, higher quality, and stronger ROI.",
-    icon: "gears",
+    description:
+      "We specialize in digital marketing and web design. This focus enables faster delivery, higher quality, and stronger ROI.",
+    image: "chose2",
     iconBg: "bg-blue-800",
-    number: "2"
+    number: "2",
   },
   {
     title: "Transparent Pricing",
-    description: "You will always know exactly what you are paying for, with clear pricing, no hidden fees, and flexible packages.",
-    icon: "hand-holding-dollar",
+    description:
+      "You will always know exactly what you are paying for, with clear pricing, no hidden fees, and flexible packages.",
+    image: "chose3",
     iconBg: "bg-blue-800",
-    number: "3"
+    number: "3",
   },
   {
     title: "Proven, Measurable Results",
-    description: "Our clients experience an average 150% increase in inquiries and a higher conversion rate with a 4.8/5 satisfaction rating.",
-    icon: "chart-line",
+    description:
+      "Our clients experience an average 150% increase in inquiries and a higher conversion rate with a 4.8/5 satisfaction rating.",
+    image: "chose4",
     iconBg: "bg-blue-800",
-    number: "4"
+    number: "4",
   },
   {
     title: "AI-First, Data-Driven Approach",
-    description: "We utilize AI and real-world data to inform marketing decisions. Every campaign is meticulously designed.",
-    icon: "brain",
+    description:
+      "We utilize AI and real-world data to inform marketing decisions. Every campaign is meticulously designed.",
+    image: "chose5",
     iconBg: "bg-blue-800",
-    number: "5"
+    number: "5",
   },
   {
     title: "Full-Stack Digital Marketing",
-    description: "Our SEO, advertising, content, design, and branding services work together as a cohesive system.",
-    icon: "layer-group",
+    description:
+      "Our SEO, advertising, content, design, and branding services work together as a cohesive system.",
+    image: "chose6",
     iconBg: "bg-blue-800",
-    number: "6"
-  }
+    number: "6",
+  },
 ];
 
-// Create Service Card
+// ***********************
+// render in services card
+// ***********************
 const serviceContainer = document.getElementById("services");
-function createServiceCard(service) {
-  const card = document.createElement("div");
-  card.classList.add("service-card");
-  card.innerHTML = `
-    <div class="${
-      service.active ? "border-[#0271E8]/70 bg-[#F0F7FF]" : "border-[#E8EAED]"
-    } shadow-sm hover:bg-[#F0F7FF] border hover:border-[#0271E8]/70  p-6 rounded-[20px]  text-[#0271E8] transition-all duration-300 cursor-pointer">
-        <img src="assets/images/services/${service.image}.png" alt="${service.title}" />
-            <h2 class="font-dm-sans mt-6 mb-3 text-[#060606] leading-[30px] text-2xl font-semibold">
-                ${service.title}
-            </h2>
-            <p class="sub-title text-base">
-                ${service.description}
-            </p>
-    </div>
-  `;
-  return card;
-}
 
-// Render services
-servicesData.forEach((service) => {
-  const card = createServiceCard(service);
-  serviceContainer.appendChild(card);
-});
+serviceContainer.innerHTML = servicesData
+  .map((service) => {
+    return `
+      <div class="${
+        service.active ? "!border-[#0271E8]" : "border-[#E8EAED]"
+      } service-card border ">
 
-// Create Why Choose Us Card
+        <img src="assets/images/services/${service.image}.png" alt="${
+      service.title
+    }" />
+
+        <h2 class="font-dm-sans mt-6 mb-3 text-[#060606] leading-[30px] text-2xl font-semibold">
+          ${service.title}
+        </h2>
+
+        <p class="sub-title text-base">
+          ${service.description}
+        </p>
+      </div>
+    `;
+  })
+  .join("");
+ 
+// *************************
+// Render Why Choose Us Card
+// *************************
 const whyChooseContainer = document.getElementById("why-choose-us-grid");
-function createWhyChooseCard(whyChoose) {
-  const card = document.createElement("div");
-  card.classList.add("why-choose-card");
-  card.innerHTML = `
-    <div class="${
-      whyChoose.active ? "border-[#0271E8]/70 bg-[#F0F7FF]" : "border-[#E8EAED]"
-    } shadow-sm hover:bg-[#F0F7FF] border hover:border-[#0271E8]/70  p-6 rounded-[20px]  text-[#0271E8] transition-all duration-300 cursor-pointer">
-        <img src="assets/images/why-choose-us/${whyChoose.icon}.png" alt="${whyChoose.title}" />
-            <h2 class="font-dm-sans mt-6 mb-3 text-[#060606] leading-[30px] text-2xl font-semibold">
-                ${whyChoose.title}
-            </h2>
-            <p class="sub-title text-base">
-                ${whyChoose.description}
-            </p>
-    </div>
-  `;
-  return card;
-}
 
-// Render why choose us
-whyChooseData.forEach((whyChoose) => {
-  const card = createWhyChooseCard(whyChoose);
-  whyChooseContainer.appendChild(card);
-});
+whyChooseContainer.innerHTML = whyChooseData
+  .map((whyChoose) => {
+    return `
+      <div class="${
+        whyChoose.active
+          ? "border-[#0271E8]/70 bg-[#3399FF]/10"
+          : "border-[#F8FAFC]/10"
+      } bg-[#3399FF]/5 hover:bg-[#3399FF]/10 hover:border-[#0271E8]/70 px-6 py-9 rounded-[20px] shadow-sm border transition-all duration-300 cursor-pointer flex flex-col">
+
+       <div class="bg-[#0271E8]/15 rounded-[12px] size-[56px] flex items-center justify-center">
+       
+       <img src="assets/images/chose-us/${whyChoose.image}.png" alt="${
+      whyChoose.title
+    }" >
+       </div>
+      
+
+        <h2 class="mt-6 mb-3 text-white leading-[30px] text-2xl font-semibold">
+          ${whyChoose.title}
+        </h2>
+
+        <p class="text-[#CBD5E1] font-extralight leading-[150%] text-base">
+          ${whyChoose.description}
+        </p>
+      </div>
+    `;
+  })
+  .join("");
+
+
