@@ -108,6 +108,42 @@ const whyChooseData = [
   },
 ];
 
+// Stats Data
+const statsData = [
+  {
+    value: "150%",
+    label: "Average Increase in Online Inquiries",
+    image: "stat1",
+    color: "#F97015",
+    bgColor: "bg-orange-50",
+    description: "Average increase in online inquiries",
+  },
+  {
+    value: "2.5x",
+    label: "Higher Conversion Rates",
+    image: "stat2",
+    color: "#14B884",
+    bgColor: "bg-teal-50",
+    description: "Higher conversion rates",
+  },
+  {
+    value: "70%",
+    label: "New Business from Referrals",
+    image: "stat3",
+    color: "#3B79F6",
+    bgColor: "bg-blue-50",
+    description: "New business from referrals",
+  },
+  {
+    value: "4.8/5",
+    label: "Client Satisfaction Rating",
+    image: "stat4",
+    color: "#F59E0B",
+    bgColor: "bg-amber-50",
+    description: "Client satisfaction rating",
+  },
+];
+
 // ***********************
 // render in services card
 // ***********************
@@ -135,7 +171,7 @@ serviceContainer.innerHTML = servicesData
     `;
   })
   .join("");
- 
+
 // *************************
 // Render Why Choose Us Card
 // *************************
@@ -170,4 +206,25 @@ whyChooseContainer.innerHTML = whyChooseData
   })
   .join("");
 
+// *************************
+//    Render Stats Card
+// *************************
+const statsGridContainer = document.getElementById("statsgrid");
 
+statsGridContainer.innerHTML = statsData
+  .map((stat) => {
+    return `
+       <div class="py-8 px-6 flex flex-col items-center justify-center text-center shadow-sm bg-white/80 border border-[#EBECF0] rounded-2xl">
+            <div class="size-16 ${stat.bgColor} rounded-2xl flex items-center justify-center">
+              <img src="assets/images/stats/${stat.image}.png" alt="${stat.label}" />
+            </div>
+            <div>
+              <h2 class="text-[${stat.color}] leading-14 text-5xl font-bold mt-6 mb-1">${stat.value}</h2>
+              <p class="text-sm text-[#65758B] leading-5 font-extralight">
+                ${stat.label}
+              </p>
+            </div>
+          </div>
+    `;
+  })
+  .join("");
