@@ -234,14 +234,14 @@ const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 20) {
-    navbar.classList.add("lg:bg-white/85", "shadow-sm");
-    navbar.classList.remove("bg-transparent");
+    navbar.classList.add("!lg:bg-white/80", "shadow-sm");
+    navbar.classList.remove("lg:bg-transparent");
   } else {
-    navbar.classList.remove("lg:bg-white/85", "shadow-sm");
-    navbar.classList.add("bg-transparent");
+    navbar.classList.remove("!lg:bg-white/80", "shadow-sm");
+    navbar.classList.add("lg:bg-transparent");
   }
 });
-
+``
 // ***************************************
 // Mobile Menu toggling
 // ***************************************
