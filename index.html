@@ -37,36 +37,15 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- tailwind css cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <style>
-      /* Smooth transitions */
-      [id$="Growth"],
-      [id$="smm"],
-      [id$="Content"],
-      [id$="branding"],
-      [id$="software"],
-      [id$="design"],
-      [id$="others"] {
-        transition: all 0.3s ease;
-      }
-
-      .category-icon {
-        transition: transform 0.3s ease;
-      }
-
-      /* Hover effects */
-      button:hover .category-icon {
-        transform: scale(1.1);
-      }
-    </style>
   </head>
   <body>
     <header
-      class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur shadow-[0_0_10px_0_rgba(0,0,0,0.0.5)]"
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 backdrop-blur"
     >
       <div class="center flex items-center justify-between py-5">
         <!-- Logo -->
-        <div class="w-[200px]">
+        <div class="w-[140px] lg:w-[200px]">
           <img src="assets/images/logo.png" alt="Khan IT Logo" />
         </div>
 
@@ -342,14 +321,16 @@
         <nav class="flex flex-col gap-4 px-6 py-6 font-medium">
           <a href="#" class="text-[#0271E8]">Home</a>
           <a href="#">About</a>
-          <!-- Mobile Services Menu -->
-          <div>
+          <!-- Mobile Services Dropdown -->
+          <a>
             <button
               class="flex items-center justify-between w-full text-left font-medium hover:text-blue-600"
-              onclick="toggleMobileServices()"
+              onclick="toggleMobileServices(this)"
             >
               Services
-              <span id="mobileServicesIcon">></span>
+              <span
+                ><i id="mobileServicesIcon" class="fa-solid fa-chevron-down"></i
+              ></span>
             </button>
 
             <div id="mobileServicesMenu" class="hidden px-4">
@@ -359,8 +340,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'organicGrowth')"
                 >
-                 • Organic Growth
-                  <span>+</span>
+                  • Organic Growth
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="organicGrowth" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600">SEO</a>
@@ -391,8 +372,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'smm')"
                 >
-                  SMM
-                  <span>+</span>
+                  • SMM
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="smm" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600"
@@ -407,8 +388,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'websiteContent')"
                 >
-                  Website and Content
-                  <span>+</span>
+                  • Website and Content
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="websiteContent" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600"
@@ -429,8 +410,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'branding')"
                 >
-                  Branding
-                  <span>+</span>
+                  • Branding
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="branding" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600"
@@ -451,8 +432,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'software')"
                 >
-                  Software
-                  <span>+</span>
+                  • Software
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="software" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600"
@@ -473,8 +454,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'design')"
                 >
-                  Design
-                  <span>+</span>
+                  • Design
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="design" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600"
@@ -492,8 +473,8 @@
                   class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
                   onclick="toggleCategory(this, 'others')"
                 >
-                  Others
-                  <span>+</span>
+                  • Others
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="others" class="hidden pl-3 space-y-1">
                   <a href="#" class="block py-1 text-sm text-gray-600"
@@ -505,7 +486,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </a>
 
           <a href="#">SEO Case Study</a>
           <a href="#">Contact Us</a>
@@ -519,7 +500,7 @@
     </header>
 
     <!-- bg  -->
-    <div class="absolute w-full top-0 left-0 right-0 bottom-0 flex">
+    <div class="hidden absolute w-full top-0 left-0 right-0 bottom-0 lg:flex">
       <div>
         <img
           class="w-full h-full object-cover"
@@ -540,7 +521,7 @@
       <!-- Hero section -->
       <section id="home" class="py-20 lg:mt-36">
         <div
-          class="center h-full flex flex-col lg:flex-row gap-14 justify-between items-center mt-10 lg:mt-0"
+          class="center h-full flex flex-col lg:flex-row gap-14 min-[1023px]:justify-between min-[1023px]:items-center mt-10 lg:mt-0"
         >
           <!-- LEFT side -->
           <div class="flex-1 lg:-translate-y-10">
@@ -570,9 +551,11 @@
           </div>
 
           <!-- RIGHT side -->
-          <div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+          <div
+            class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 w-full md:mt-10 lg:mt-0"
+          >
             <!-- part 1  -->
-            <div class="flex flex-col gap-6 lg:-translate-y-9">
+            <div class="flex flex-col gap-6 md:-translate-y-9">
               <div class="w-full">
                 <img
                   class="w-full"
@@ -612,7 +595,7 @@
       </section>
 
       <!-- Our Service Section -->
-      <section id="our-service" class="py-24">
+      <section id="our-service" class="py-16 lg:py-24">
         <div class="center">
           <!-- heading -->
           <div class="text-center mb-16">
@@ -705,26 +688,7 @@
         </div>
       </section>
     </main>
-    <script>
-      // Toggle main Services menu
-      function toggleMobileServices() {
-        const menu = document.getElementById("mobileServicesMenu");
-        const icon = document.getElementById("mobileServicesIcon");
-        const isHidden = menu.classList.contains("hidden");
 
-        menu.classList.toggle("hidden");
-        icon.textContent = isHidden ? "−" : "+";
-      }
-
-      // Toggle individual category
-      function toggleCategory(button, categoryId) {
-        const category = document.getElementById(categoryId);
-        const icon = button.querySelector("span");
-
-        category.classList.toggle("hidden");
-        icon.textContent = category.classList.contains("hidden") ? "+" : "−";
-      }
-    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

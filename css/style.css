@@ -34,12 +34,17 @@ body {
   background-color: var(--primary-color);
   color: #fff;
   padding: 12px 24px;
-  text-decoration: none;
   font-weight: 500;
   cursor: pointer;
   border-radius: var(--border-radius);
   opacity: 90;
   font-size: 16px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  filter: brightness(110%);
+  transform: translateY(-1px);
 }
 
 /* section header */
@@ -61,23 +66,30 @@ body {
 }
 
 .sub-title {
-  color: #65758B;
+  color: #65758b;
   font-weight: 400;
   line-height: 150%;
 }
 
-
 /* card */
 .service-card {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137);      
-  padding: 1.5rem;                                
-  border-radius: 20px;                        
-  color: #0271e8;                               
-  transition: all 300ms ease;               
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137);
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: #0271e8;
+  transition: all 300ms ease;
   cursor: pointer;
 }
 
 .service-card:hover {
   background-color: #f0f7ff;
   border: 1px solid var(--primary-color);
+}
+
+/* responsive code */
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+    line-height: 42px;
+  }
 }

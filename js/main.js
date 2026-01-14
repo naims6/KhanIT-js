@@ -153,8 +153,8 @@ serviceContainer.innerHTML = servicesData
   .map((service) => {
     return `
       <div class="${
-        service.active ? "!border-[#0271E8]" : "border-[#E8EAED]"
-      } service-card border ">
+        service.active ? "!border-[#0271E8] bg-[#f0f7ff]" : "border-[#E8EAED]"
+      } service-card border hover:-translate-y-0.5">
 
         <img src="assets/images/services/${service.image}.png" alt="${
       service.title
@@ -184,7 +184,7 @@ whyChooseContainer.innerHTML = whyChooseData
         whyChoose.active
           ? "border-[#0271E8]/70 bg-[#3399FF]/10"
           : "border-[#F8FAFC]/10"
-      } bg-[#3399FF]/5 hover:bg-[#3399FF]/10 hover:border-[#0271E8]/70 px-6 py-9 rounded-[20px] shadow-sm border transition-all duration-300 cursor-pointer flex flex-col">
+      } bg-[#3399FF]/5 hover:bg-[#3399FF]/10 hover:border-[#0271E8]/70 px-6 py-9 rounded-[20px] shadow-sm border transition-all duration-300 cursor-pointer flex flex-col hover:-translate-y-0.5">
 
        <div class="bg-[#0271E8]/15 rounded-[12px] size-[56px] flex items-center justify-center">
        
@@ -214,7 +214,7 @@ const statsGridContainer = document.getElementById("statsgrid");
 statsGridContainer.innerHTML = statsData
   .map((stat) => {
     return `
-       <div class="py-8 px-6 flex flex-col items-center justify-center text-center shadow-sm bg-white/80 border border-[#EBECF0] rounded-2xl">
+       <div class="py-8 px-6 flex flex-col items-center justify-center text-center shadow-sm bg-white/80 border border-[#EBECF0] rounded-2xl hover:-translate-y-0.5 transition-all duration-300">
             <div class="size-16 ${stat.bgColor} rounded-2xl flex items-center justify-center">
               <img src="assets/images/stats/${stat.image}.png" alt="${stat.label}" />
             </div>
@@ -228,3 +228,53 @@ statsGridContainer.innerHTML = statsData
     `;
   })
   .join("");
+
+// After scroll navbar
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 20) {
+    navbar.classList.add("bg-white/90", "shadow-sm");
+    navbar.classList.remove("bg-transparent");
+  } else {
+    navbar.classList.remove("bg-white/90", "shadow-sm");
+    navbar.classList.add("bg-transparent");
+  }
+});
+
+// ***************************************
+// Mobile Menu toggling
+// ***************************************
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+// Mobile main menu
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+  menuBtn.textContent = mobileMenu.classList.contains("hidden") ? "☰" : "✕";
+});
+
+// ***************************************
+// Mobile services menu toggle accordion
+// ***************************************
+// Toggle main Services menu
+function toggleMobileServices(button) {
+  const menu = document.getElementById("mobileServicesMenu");
+  const icon = document.getElementById("mobileServicesIcon");
+
+  button.classList.toggle("!text-blue-600");
+  menu.classList.toggle("hidden");
+  icon.classList.toggle("fa-chevron-down");
+  icon.classList.toggle("fa-chevron-up");
+}
+
+// Toggle individual category
+function toggleCategory(button, categoryId) {
+  const category = document.getElementById(categoryId);
+  const icon = button.querySelector(".fa-solid");
+
+  button.classList.toggle("!text-blue-600");
+  category.classList.toggle("hidden");
+  icon.classList.toggle("fa-chevron-down");
+  icon.classList.toggle("fa-chevron-up");
+}
