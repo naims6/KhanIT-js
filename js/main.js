@@ -234,10 +234,10 @@ const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 20) {
-    navbar.classList.add("bg-white/90", "shadow-sm");
+    navbar.classList.add("lg:bg-white/85", "shadow-sm");
     navbar.classList.remove("bg-transparent");
   } else {
-    navbar.classList.remove("bg-white/90", "shadow-sm");
+    navbar.classList.remove("lg:bg-white/85", "shadow-sm");
     navbar.classList.add("bg-transparent");
   }
 });
