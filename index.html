@@ -4,42 +4,517 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khan IT</title>
+    <!-- standard favicon -->
+    <link rel="icon" href="assets/images/favicon/favicon.ico" />
+    <!-- apple (ios) favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <!-- Android Chrome favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon/favicon-16x16.png"
+    />
+    <!-- font awesome cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Css Link -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- tailwind css link -->
+    <!-- tailwind css cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      /* Smooth transitions */
+      [id$="Growth"],
+      [id$="smm"],
+      [id$="Content"],
+      [id$="branding"],
+      [id$="software"],
+      [id$="design"],
+      [id$="others"] {
+        transition: all 0.3s ease;
+      }
+
+      .category-icon {
+        transition: transform 0.3s ease;
+      }
+
+      /* Hover effects */
+      button:hover .category-icon {
+        transform: scale(1.1);
+      }
+    </style>
   </head>
   <body>
-    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
-      <div class="center flex justify-between items-center py-5">
-        <div class="w-[216px]">
-          <img class="w-full" src="assets/images/logo.png" alt="Khat IT Logo" />
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur shadow-[0_0_10px_0_rgba(0,0,0,0.0.5)]"
+    >
+      <div class="center flex items-center justify-between py-5">
+        <!-- Logo -->
+        <div class="w-[200px]">
+          <img src="assets/images/logo.png" alt="Khan IT Logo" />
         </div>
 
-        <nav class="hidden lg:flex gap-5 items-center" id="navLinks">
+        <!-- Desktop NavLink -->
+        <nav class="hidden lg:flex items-center gap-6 font-medium">
           <a href="#" class="text-[#0271E8]">Home</a>
           <a href="#" class="hover:text-[#0271E8]">About</a>
-          <a href="#" class="flex items-center gap-1 hover:text-[#0271E8]"
-            >Services
-            <img
-              width="20"
-              height="20"
-              src="assets/icon/arrow-down.png"
-              alt="Arrow Icon"
-          /></a>
-          <a href="#" class="hover:text-[#0271E8]">SEO Case study</a>
+          <!-- Services with Dropdown -->
+          <div class="relative group">
+            <a
+              href="#"
+              class="flex items-center gap-1 hover:text-[#0271E8] cursor-pointer"
+            >
+              Services
+              <img
+                src="assets/icon/arrow-down.png"
+                width="14"
+                class="group-hover:rotate-180 transition-transform duration-200"
+              />
+            </a>
+
+            <!-- Services Dropdown Menu -->
+            <div
+              class="absolute left-0 top-full mt-2 w-[300px] bg-white shadow-lg rounded-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0"
+            >
+              <div class="p-4 space-y-4 max-h-[500px] overflow-y-auto">
+                <!-- Organic Growth -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • Organic Growth
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >SEO</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >SEO for Travel Agents</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >SEO for SMM Panel</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >SEO for Garments</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >SEO for E-Commerce</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Professional SEO</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Local SEO</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- SMM -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • SMM
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Social Media Marketing</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Website and Content -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • Website and Content
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Web Design & Development</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Ecommerce Website</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Website Maintenance</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Branding -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • Branding
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Corporate Branding</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Personal Branding</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Wikipedia Page Creation</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Software -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • Software
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Micro-credit Management System</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >n8n Automation Service</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Google Tag Manager Service</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Design -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • Design
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >UI UX Design</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Graphic Design</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Others -->
+                <div>
+                  <h3
+                    class="text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide"
+                  >
+                    • Others
+                  </h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >Video Production</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-gray-600 hover:text-[#0271E8] hover:bg-blue-50 px-3 py-2 rounded-md text-sm"
+                        >PR Agency</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="hover:text-[#0271E8]">SEO Case Study</a>
           <a href="#" class="hover:text-[#0271E8]">Contact Us</a>
         </nav>
 
-        <button class="lg:hidden" id="menuBtn">☰</button>
+        <!-- Desktop Number Button -->
         <button class="hidden lg:flex primary-btn items-center gap-2">
-          <img
-            width="24"
-            height="24"
-            src="assets/icon/call.svg"
-            alt="Call Icon"
-          />+8801404282727
+          <img src="assets/icon/call.svg" width="20" />
+          +8801404282727
         </button>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-2xl" id="menuBtn">☰</button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden hidden border-t border-[#E5E7EB] shadow-sm overflow-y-auto max-h-[80vh]"
+      >
+        <nav class="flex flex-col gap-4 px-6 py-6 font-medium">
+          <a href="#" class="text-[#0271E8]">Home</a>
+          <a href="#">About</a>
+          <!-- Mobile Services Menu -->
+          <div>
+            <button
+              class="flex items-center justify-between w-full text-left font-medium hover:text-blue-600"
+              onclick="toggleMobileServices()"
+            >
+              Services
+              <span id="mobileServicesIcon">></span>
+            </button>
+
+            <div id="mobileServicesMenu" class="hidden px-4">
+              <!-- Organic Growth -->
+              <div class="mb-2">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'organicGrowth')"
+                >
+                 • Organic Growth
+                  <span>+</span>
+                </button>
+                <div id="organicGrowth" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600">SEO</a>
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >SEO for Travel Agents</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >SEO for SMM Panel</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >SEO for Garments</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >SEO for E-Commerce</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Professional SEO</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Local SEO</a
+                  >
+                </div>
+              </div>
+
+              <!-- SMM -->
+              <div class="mb-2">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'smm')"
+                >
+                  SMM
+                  <span>+</span>
+                </button>
+                <div id="smm" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Social Media Marketing</a
+                  >
+                </div>
+              </div>
+
+              <!-- Website and Content -->
+              <div class="mb-2">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'websiteContent')"
+                >
+                  Website and Content
+                  <span>+</span>
+                </button>
+                <div id="websiteContent" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Web Design & Development</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Ecommerce Website</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Website Maintenance</a
+                  >
+                </div>
+              </div>
+
+              <!-- Branding -->
+              <div class="mb-2">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'branding')"
+                >
+                  Branding
+                  <span>+</span>
+                </button>
+                <div id="branding" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Corporate Branding</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Personal Branding</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Wikipedia Page Creation</a
+                  >
+                </div>
+              </div>
+
+              <!-- Software -->
+              <div class="mb-2">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'software')"
+                >
+                  Software
+                  <span>+</span>
+                </button>
+                <div id="software" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Micro-credit Management System</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >n8n Automation Service</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Google Tag Manager Service</a
+                  >
+                </div>
+              </div>
+
+              <!-- Design -->
+              <div class="mb-2">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'design')"
+                >
+                  Design
+                  <span>+</span>
+                </button>
+                <div id="design" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >UI UX Design</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Graphic Design</a
+                  >
+                </div>
+              </div>
+
+              <!-- Others -->
+              <div class="mb-4">
+                <button
+                  class="flex items-center justify-between w-full text-left py-2 text-sm font-medium text-gray-700"
+                  onclick="toggleCategory(this, 'others')"
+                >
+                  Others
+                  <span>+</span>
+                </button>
+                <div id="others" class="hidden pl-3 space-y-1">
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >Video Production</a
+                  >
+                  <a href="#" class="block py-1 text-sm text-gray-600"
+                    >PR Agency</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#">SEO Case Study</a>
+          <a href="#">Contact Us</a>
+
+          <button class="primary-btn mt-4 w-full flex justify-center gap-2">
+            <img src="assets/icon/call.svg" width="20" />
+            +8801404282727
+          </button>
+        </nav>
       </div>
     </header>
 
@@ -69,13 +544,19 @@
         >
           <!-- LEFT side -->
           <div class="flex-1 lg:-translate-y-10">
-            <h1
+            <div
               class="text-4xl md:text-5xl xl:text-6xl font-bold font-dm-sans leading-[120%] lg:leading-[130%] tracking-[-0.18px]"
             >
-              Digital Marketing <br />
-              Agency in <br />
-              Bangladesh
-            </h1>
+              <span class=""
+                >Digital Marketing
+                <img
+                  class="inline w-10 lg:w-16 -translate-4 lg:-translate-y-8 -ml-1 lg:-ml-4"
+                  src="/assets/images/highlight.png"
+                  alt="" /></span
+              ><br />
+              <span>Agency in</span><br />
+              <span>Bangladesh</span>
+            </div>
 
             <p
               class="max-w-xl mt-4 mb-8 lg:mt-6 lg:mb-14 text-[#65758B] font-extralight text-lg leading-[150%]"
@@ -187,7 +668,7 @@
       <!-- Company Stats section -->
       <section id="stats" class="bg-[#F1F5F9] py-24">
         <!-- heading -->
-        <div class="text-center mb-16">
+        <div class="center text-center mb-16">
           <span class="badge">Proven Results</span>
           <h2 class="title mt-6 mb-4">Results That Speak for Themselves</h2>
           <p class="sub-title text-lg">
@@ -198,16 +679,24 @@
 
         <!-- stats grid -->
         <div
-        id="statsgrid"
+          id="statsgrid"
           class="center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
         >
           <!-- stats item -->
-          <div class="py-8 px-6 flex flex-col items-center justify-center text-center shadow-sm bg-white/80 border border-[#EBECF0] rounded-2xl">
-            <div class="size-16 bg-red-100 rounded-2xl flex items-center justify-center">
+          <div
+            class="py-8 px-6 flex flex-col items-center justify-center text-center shadow-sm bg-white/80 border border-[#EBECF0] rounded-2xl"
+          >
+            <div
+              class="size-16 bg-red-100 rounded-2xl flex items-center justify-center"
+            >
               <img src="assets/images/stats/stat1.png" alt="Stats Icon" />
             </div>
             <div>
-              <h2 class="text-[#F97015] leading-14 text-5xl font-bold mt-6 mb-1">150%</h2>
+              <h2
+                class="text-[#F97015] leading-14 text-5xl font-bold mt-6 mb-1"
+              >
+                150%
+              </h2>
               <p class="text-sm text-[#65758B] leading-5 font-extralight">
                 Average Increase in Online Inquiries
               </p>
@@ -216,7 +705,26 @@
         </div>
       </section>
     </main>
+    <script>
+      // Toggle main Services menu
+      function toggleMobileServices() {
+        const menu = document.getElementById("mobileServicesMenu");
+        const icon = document.getElementById("mobileServicesIcon");
+        const isHidden = menu.classList.contains("hidden");
 
+        menu.classList.toggle("hidden");
+        icon.textContent = isHidden ? "−" : "+";
+      }
+
+      // Toggle individual category
+      function toggleCategory(button, categoryId) {
+        const category = document.getElementById(categoryId);
+        const icon = button.querySelector("span");
+
+        category.classList.toggle("hidden");
+        icon.textContent = category.classList.contains("hidden") ? "+" : "−";
+      }
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>
