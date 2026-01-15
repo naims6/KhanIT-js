@@ -4,7 +4,7 @@ const servicesData = [
     title: "SEO Service",
     description:
       "Improve Google rankings and gain consistent, long-term traffic.",
-    image: "seo",
+    image: "Seo",
     bgColor: "bg-[#F0F7FF]",
     active: true,
   },
@@ -37,7 +37,7 @@ const servicesData = [
   {
     title: "Branding",
     description: "Differentiate your business and build customer loyalty.",
-    image: "branding",
+    image: "Branding",
     bgColor: "bg-[#F0F7FF]",
   },
   {
@@ -153,7 +153,7 @@ serviceContainer.innerHTML = servicesData
   .map((service) => {
     return `
       <div class="${
-        service.active ? "!border-[#0271E8] bg-[#f0f7ff]" : "border-[#E8EAED]"
+        service.active ? "border-[#0271E8]! bg-[#f0f7ff]" : "border-[#E8EAED]"
       } service-card border hover:-translate-y-0.5">
 
         <img src="assets/images/services/${service.image}.png" alt="${
@@ -186,7 +186,7 @@ whyChooseContainer.innerHTML = whyChooseData
           : "border-[#F8FAFC]/10"
       } bg-[#3399FF]/5 hover:bg-[#3399FF]/10 hover:border-[#0271E8]/70 px-6 py-9 rounded-[20px] shadow-sm border transition-all duration-300 cursor-pointer flex flex-col hover:-translate-y-0.5">
 
-       <div class="bg-[#0271E8]/15 rounded-[12px] size-[56px] flex items-center justify-center">
+       <div class="bg-[#0271E8]/15 rounded-xl size-14flex items-center justify-center">
        
        <img src="assets/images/chose-us/${whyChoose.image}.png" alt="${
       whyChoose.title
@@ -241,7 +241,7 @@ window.addEventListener("scroll", () => {
     navbar.classList.add("lg:bg-transparent");
   }
 });
-``
+``;
 // ***************************************
 // Mobile Menu toggling
 // ***************************************
